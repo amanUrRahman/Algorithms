@@ -29,7 +29,7 @@ public class BonAppetit {
 		//aman
 		long sharedAmount = (bill.stream().filter(i -> k != bill.indexOf(i)).reduce(0,(sum,e) -> sum+e))/2;
 		if (Long.valueOf(b) == sharedAmount)
-			System.out.println("Bon Appetit");
+			System.out.println("Bon Appetit1");
 		else if (Long.valueOf(b) > sharedAmount)
 			System.out.println(Long.valueOf(b)-sharedAmount);
 		else
