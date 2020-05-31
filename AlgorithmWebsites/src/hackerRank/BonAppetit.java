@@ -24,8 +24,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class BonAppetit {
-
-	static void bonAppetit(List<Integer> bill, int k, int b) { //aman
+	// static method to check the bill
+	static void bonAppetit(List<Integer> bill, int k, int b) {
 		long sharedAmount = (bill.stream().filter(i -> k != bill.indexOf(i)).reduce(0,(sum,e) -> sum+e))/2;
 		if (Long.valueOf(b) == sharedAmount)
 			System.out.println("Bon Appetit");
