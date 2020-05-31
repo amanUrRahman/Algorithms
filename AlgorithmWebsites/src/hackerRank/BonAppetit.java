@@ -24,21 +24,20 @@ import java.util.Arrays;
 import java.util.List;
 
 public class BonAppetit {
-	// static method to check the bill
 	static void bonAppetit(List<Integer> bill, int k, int b) {
-		long sharedAmount = (bill.stream().filter(i -> k != bill.indexOf(i)).reduce(0,(sum,e) -> sum+e))/2;
+		long sharedAmount = (bill.stream().filter(i -> k != bill.indexOf(i)).reduce(0, (sum, e) -> sum + e)) / 2;
 		if (Long.valueOf(b) == sharedAmount)
 			System.out.println("Bon Appetit");
 		else if (Long.valueOf(b) > sharedAmount)
-			System.out.println(Long.valueOf(b)-sharedAmount);
+			System.out.println(Long.valueOf(b) - sharedAmount);
 		else
-			System.out.println(Long.valueOf(b)-sharedAmount);
+			System.out.println(Long.valueOf(b) - sharedAmount);
 	}
-	
+
 	public static void main(String[] args) {
-		
-		List<Integer> list = Arrays.asList(3,10,2,9);
-		bonAppetit(list,1,12);
+
+		List<Integer> list = Arrays.asList(3, 10, 2, 9);
+		bonAppetit(list, 1, 12);
 	}
 
 }
