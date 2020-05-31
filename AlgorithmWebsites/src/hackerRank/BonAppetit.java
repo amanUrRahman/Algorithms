@@ -26,10 +26,10 @@ import java.util.List;
 public class BonAppetit {
 
 	static void bonAppetit(List<Integer> bill, int k, int b) {
-		//aman
+		//saba
 		long sharedAmount = (bill.stream().filter(i -> k != bill.indexOf(i)).reduce(0,(sum,e) -> sum+e))/2;
 		if (Long.valueOf(b) == sharedAmount)
-			System.out.println("Bon Appetit1");
+			System.out.println("Bon Appetit");
 		else if (Long.valueOf(b) > sharedAmount)
 			System.out.println(Long.valueOf(b)-sharedAmount);
 		else
