@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="GoogleTests" duration-ms="23205" started-at="2020-06-02T23:04:15 IST" finished-at="2020-06-02T23:04:38 IST">
+    <groups>
+    </groups>
+    <test name="GoogleTests" duration-ms="23205" started-at="2020-06-02T23:04:15 IST" finished-at="2020-06-02T23:04:38 IST">
+      <class name="testScripts.GoogleTests">
+        <test-method status="PASS" signature="Setup()[pri:0, instance:testScripts.GoogleTests@1c1bbc4e]" name="Setup" is-config="true" duration-ms="9449" started-at="2020-06-02T23:04:05 IST" finished-at="2020-06-02T23:04:15 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Setup -->
+        <test-method status="PASS" signature="PopularityCheck()[pri:0, instance:testScripts.GoogleTests@1c1bbc4e]" name="PopularityCheck" duration-ms="23128" started-at="2020-06-02T23:04:15 IST" finished-at="2020-06-02T23:04:38 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PopularityCheck -->
+        <test-method status="PASS" signature="Teardown()[pri:0, instance:testScripts.GoogleTests@1c1bbc4e]" name="Teardown" is-config="true" duration-ms="4956" started-at="2020-06-02T23:04:38 IST" finished-at="2020-06-02T23:04:43 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Teardown -->
+      </class> <!-- testScripts.GoogleTests -->
+    </test> <!-- GoogleTests -->
+  </suite> <!-- GoogleTests -->
+</testng-results>
