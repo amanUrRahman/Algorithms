@@ -1,3 +1,9 @@
+/*
+Author: Aman Ur Rahman
+Program: GoogleTests
+Description:
+This class consists of all the individual tests that are applied to Google Search Results
+*/
 package testScripts;
 
 import org.openqa.selenium.By;
