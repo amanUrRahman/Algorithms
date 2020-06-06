@@ -16,7 +16,12 @@ public class GoogleTests extends SetupTeardownForGoogleTests {
 	public void PopularityCheck() {
 		driver.findElement(By.xpath("//input[@name='q']")).clear();
 		driver.findElement(By.xpath("//input[@name='q']")).sendKeys("Aman ur rahman14343");
-		jsExecutor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//input[@type='submit']")));
+		if (cloudTesting.equals(true)) {
+			driver.findElement(By.xpath("//input[@name='q']")).submit();
+		}
+		else if (cloudTesting.equals(false)) {
+			jsExecutor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//input[@type='submit']")));
+		}
 		if (driver.findElements(By.xpath("//div[@id='result-stats']")).size() > 0) {
 			Long SearchResults = Long.valueOf(driver.findElement(By.xpath("//div[@id='result-stats']")).getText().split("results")[0]
 					.split(" ")[1].replace(",", ""));
