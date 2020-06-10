@@ -46,9 +46,6 @@ public class SetupTeardownForGoogleTests {
 		context.setConfigLocation(new File("src/test/resources/files/log4j2.xml").toURI());
 		Log.info("**********Before Suite has initiated**********");
 		fileUtils = new FileUtils("src/test/resources/files/config.properties");
-//		log4JPropertyFileLocation = new FileUtils("D:/Personal Codebase/algorithm/Algorithms/TestNGWithSelenium/src/test/resources/files/log4j2.properties");
-//		PropertyConfigurator.configure(p);
-
 		browser = fileUtils.getSelectedBrowser();
 		if (fileUtils.getcloudTesting())
 			cloudTesting = true;
