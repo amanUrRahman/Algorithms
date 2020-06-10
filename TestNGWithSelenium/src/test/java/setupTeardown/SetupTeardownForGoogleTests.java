@@ -38,7 +38,7 @@ public class SetupTeardownForGoogleTests {
 	public static final String AUTOMATE_KEY = "vAPbdqyMWX4ybXeGeJzz";
 	public static final String CloudURL = "https://" + USERNAME + ":" + AUTOMATE_KEY
 			+ "@hub-cloud.browserstack.com/wd/hub";
-	private static Logger Log = LogManager.getLogger(SetupTeardownForGoogleTests.class);
+	protected static Logger Log = LogManager.getLogger(SetupTeardownForGoogleTests.class);
 	private static LoggerContext context = (org.apache.logging.log4j.core.LoggerContext) LogManager.getContext(false);
 
 	@BeforeSuite
@@ -104,7 +104,7 @@ public class SetupTeardownForGoogleTests {
 		Log.info("**********After Suite is executing**********");
 		driver.close();
 		driver.quit();
-		Log.info("Closed all instances fo browsers");
+		Log.info("Closed all instances of browsers");
 		Log.info("**********After Suite has completed**********");
 
 	}
