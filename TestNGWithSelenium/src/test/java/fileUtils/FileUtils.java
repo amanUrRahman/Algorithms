@@ -9,7 +9,7 @@ import java.util.Properties;
 
 public class FileUtils {
 
-	public static Properties config = null;
+	public Properties config = null;
 	public InputStream fis = null;
 
 	public FileUtils(String filePath) throws IOException {
