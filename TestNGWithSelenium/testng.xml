@@ -3,8 +3,7 @@
 <suite name="GoogleTests">
 	<test name="GoogleTests">
 		<classes>
-			<class name="testScripts.GoogleTests">
-			</class>
+			<class name="testScripts.GoogleTests"></class>
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

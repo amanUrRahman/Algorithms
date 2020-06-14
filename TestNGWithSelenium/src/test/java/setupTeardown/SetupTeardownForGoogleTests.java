@@ -14,10 +14,18 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import fileUtils.FileUtils;
 import generalUtil.BrowserWindowUtil;
@@ -40,9 +48,16 @@ public class SetupTeardownForGoogleTests {
 			+ "@hub-cloud.browserstack.com/wd/hub";
 	protected static Logger Log = LogManager.getLogger(SetupTeardownForGoogleTests.class);
 	private static LoggerContext context = (org.apache.logging.log4j.core.LoggerContext) LogManager.getContext(false);
+	protected ExtentSparkReporter extentSparkReporter = null;
+	protected ExtentReports extentReports = null;
+	protected ExtentTest extentTest = null;
 
 	@BeforeSuite
 	public void Setup() throws IOException {
+
+		extentSparkReporter = new ExtentSparkReporter("src/test/resources/output/Extent_Report.html");
+		extentReports = new ExtentReports();
+		extentReports.attachReporter(extentSparkReporter);
 		context.setConfigLocation(new File("src/test/resources/files/log4j2.xml").toURI());
 		Log.info("**********Before Suite has initiated**********");
 		fileUtils = new FileUtils("src/test/resources/files/config.properties");
@@ -70,43 +85,58 @@ public class SetupTeardownForGoogleTests {
 			Log.info("Setting capabilities for local execution");
 			if (browser.equalsIgnoreCase("chrome")) {
 				WebDriverManager.chromedriver().setup();
-				driver = new ChromeDriver();
 			} else if (browser.equalsIgnoreCase("firefox")) {
 				WebDriverManager.firefoxdriver().setup();
-				driver = new FirefoxDriver();
 			} else if (browser.equalsIgnoreCase("ie")) {
 				WebDriverManager.iedriver().setup();
-				driver = new InternetExplorerDriver();
 			}
 		}
-		jsExecutor = (JavascriptExecutor) driver;
-		browserUtil = new BrowserWindowUtil(driver);
 		Log.info("**********Before Test has completed**********");
 	}
 
 	@BeforeMethod
 	public void SetupForEachMethod() throws IOException {
 		Log.info("**********Before Method is executing**********");
+		//extentTest = extentReports.createTest(result.getName());
 		if (cloudTesting.equals(true)) {
 			Log.info("Initiating driver and opening the specified url in cloud");
 			driver = new RemoteWebDriver(new URL(CloudURL), caps);
 			driver.get("http://www.google.com");
 		} else if (cloudTesting.equals(false)) {
+			if (browser.equalsIgnoreCase("chrome")) {
+				driver = new ChromeDriver();
+			} else if (browser.equalsIgnoreCase("firefox")) {
+				driver = new FirefoxDriver();
+			} else if (browser.equalsIgnoreCase("ie")) {
+				driver = new InternetExplorerDriver();
+			}			
 			Log.info("Initiating driver and opening the specified url in local machine");
 			driver.get(fileUtils.getSelectedUrl());
-			browserUtil.MaximizeBrowserWindow();
 		}
+		jsExecutor = (JavascriptExecutor) driver;
+		browserUtil = new BrowserWindowUtil(driver);
+		browserUtil.MaximizeBrowserWindow();
 		Log.info("**********Before Method has completed**********");
+		//extentTest.log(Status.INFO, "Browser URL has started successfully");
+	}
+	
+	@AfterMethod
+	public void TearDownForEachMethod() throws IOException {
+		Log.info("**********After Method is executing**********");
+		//extentTest = extentReports.createTest(result.getName());
+		driver.close();
+		Log.info("**********After Method has completed**********");
+		//extentTest.log(Status.INFO, "Browser URL has started successfully");
 	}
 
 	@AfterSuite
 	public void Teardown() {
 		Log.info("**********After Suite is executing**********");
-		driver.close();
+		//driver.close();
 		driver.quit();
 		Log.info("Closed all instances of browsers");
 		Log.info("**********After Suite has completed**********");
-
+		extentReports.flush();
 	}
 
 }

@@ -7,9 +7,10 @@
         <methods>
           <include name="Teardown"/>
           <include name="Setup"/>
-          <include name="PopularityCheck"/>
+          <include name="TearDownForEachMethod"/>
           <include name="SetupForEachMethod"/>
           <include name="SetupForEachTest"/>
+          <include name="DoodleDay"/>
         </methods>
       </class> <!-- testScripts.GoogleTests -->
     </classes>
