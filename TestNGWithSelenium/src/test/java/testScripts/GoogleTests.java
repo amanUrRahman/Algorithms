@@ -7,6 +7,7 @@ This class consists of all the individual tests that are applied to Google Searc
 package testScripts;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
@@ -50,12 +51,16 @@ public class GoogleTests extends SetupTeardownForGoogleTests {
 		extentTest = extentReports.createTest("DoodleDay");
 		Log.info("Doodle check method has initiated");
 		extentTest.log(Status.INFO, "DoodleDay has started");
-		if (driver.findElement(By.xpath("//img[@src='/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png']"))
-				.isDisplayed()) {
+		if (driver.findElements(By.xpath("//img[@src='/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png']")).size() > 0) {
 			System.out.println("The GOOGLE image is displayed");
+			Log.info("Today is not a Doodle day");
+			extentTest.log(Status.INFO, "Google image displayed, therefore not a Doodle day");
+		} else {
+			Log.info("Today is not a Doodle day");
+			extentTest.log(Status.FAIL, "Google image not displayed, therefore a Doodle day");
+			Assert.fail("Today is not a Doodle day");
 		}
-		Log.info("Today is not a Doodle day");
-		extentTest.log(Status.INFO, "Google image displayed, therefore not a Doodle day");
+		
 
 	}
 
