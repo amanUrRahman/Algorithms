@@ -23,6 +23,8 @@ public class NotepadTests {
 	public void setUp() throws MalformedURLException {
 		DesiredCapabilities caps = new DesiredCapabilities();
 		caps.setCapability("app", "C:\\Windows\\notepad.exe");
+		//caps.SetCapability("appArguments", @"MyTestFile.txt"); to specify personal file
+		//caps.SetCapability("appWorkingDir", @"C:\MyTestFolder\"); to specify file location
 		caps.setCapability("platformName", "Windows");
 		caps.setCapability("deviceName", "WindowsPC");
 		driver = new WindowsDriver(new URL("http://127.0.0.1:4723/"), caps);
