@@ -17,7 +17,7 @@ import io.appium.java_client.windows.WindowsElement;
 
 public class NotepadTests {
 
-	public static WindowsDriver<RemoteWebElement> driver = null;
+	public static WindowsDriver driver = null;
 
 	@BeforeMethod
 	public void setUp() throws MalformedURLException {
@@ -25,7 +25,7 @@ public class NotepadTests {
 		caps.setCapability("app", "C:\\Windows\\notepad.exe");
 		caps.setCapability("platformName", "Windows");
 		caps.setCapability("deviceName", "WindowsPC");
-		driver = new WindowsDriver<RemoteWebElement>(new URL("http://127.0.0.1:4723/"), caps);
+		driver = new WindowsDriver(new URL("http://127.0.0.1:4723/"), caps);
 	}
 
 	@AfterMethod
