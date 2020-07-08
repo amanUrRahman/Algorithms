@@ -4,6 +4,7 @@
   <test name="demoTests">
     <classes>
       <class name="demoTests.NotepadTests"/>
+      <class name="demoTests.CalculatorTests"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
