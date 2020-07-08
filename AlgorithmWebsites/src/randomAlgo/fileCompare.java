@@ -8,8 +8,8 @@ public class fileCompare {
 
 	public static void main(String[] args) throws IOException {
 
-		BufferedReader reader1 = new BufferedReader(new FileReader("C:\\file1.txt"));
-		BufferedReader reader2 = new BufferedReader(new FileReader("C:\\file2.txt"));
+		BufferedReader reader1 = new BufferedReader(new FileReader("resources/file1.txt"));
+		BufferedReader reader2 = new BufferedReader(new FileReader("resources/file2.txt"));
 		String line1 = reader1.readLine();
 		String line2 = reader2.readLine();
 		boolean areEqual = true;
