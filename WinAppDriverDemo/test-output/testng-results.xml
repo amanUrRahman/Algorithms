@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="7016" started-at="2020-07-08T18:28:05 IST" finished-at="2020-07-08T18:28:12 IST">
+  <suite name="Default suite" duration-ms="6584" started-at="2020-07-10T08:53:26 IST" finished-at="2020-07-10T08:53:33 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="7016" started-at="2020-07-08T18:28:05 IST" finished-at="2020-07-08T18:28:12 IST">
-      <class name="demoTests.NotepadTests">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:demoTests.NotepadTests@27a5f880]" name="setUp" is-config="true" duration-ms="1480" started-at="2020-07-08T18:28:05 IST" finished-at="2020-07-08T18:28:06 IST">
+    <test name="Default test" duration-ms="6584" started-at="2020-07-10T08:53:26 IST" finished-at="2020-07-10T08:53:33 IST">
+      <class name="demoTests.CalculatorTests">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:demoTests.CalculatorTests@1f7030a6]" name="setUp" is-config="true" duration-ms="3158" started-at="2020-07-10T08:53:26 IST" finished-at="2020-07-10T08:53:29 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="sendText()[pri:1, instance:demoTests.NotepadTests@27a5f880]" name="sendText" duration-ms="1288" started-at="2020-07-08T18:28:06 IST" finished-at="2020-07-08T18:28:07 IST">
+        <test-method status="PASS" signature="checkSwap()[pri:0, instance:demoTests.CalculatorTests@1f7030a6]" name="checkSwap" duration-ms="3106" started-at="2020-07-10T08:53:29 IST" finished-at="2020-07-10T08:53:32 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- sendText -->
-        <test-method status="PASS" signature="shutDown()[pri:0, instance:demoTests.NotepadTests@27a5f880]" name="shutDown" is-config="true" duration-ms="4208" started-at="2020-07-08T18:28:07 IST" finished-at="2020-07-08T18:28:12 IST">
+        </test-method> <!-- checkSwap -->
+        <test-method status="PASS" signature="shutDown()[pri:0, instance:demoTests.CalculatorTests@1f7030a6]" name="shutDown" is-config="true" duration-ms="246" started-at="2020-07-10T08:53:32 IST" finished-at="2020-07-10T08:53:33 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shutDown -->
-      </class> <!-- demoTests.NotepadTests -->
+      </class> <!-- demoTests.CalculatorTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

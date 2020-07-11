@@ -6,6 +6,7 @@
       <class name="demoTests.NotepadTests">
         <methods>
           <include name="checkVersion"/>
+          <include name="sendText"/>
           <include name="shutDown"/>
           <include name="setUp"/>
         </methods>
