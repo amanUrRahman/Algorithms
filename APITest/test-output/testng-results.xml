@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="4058" started-at="2020-07-12T17:58:43 IST" finished-at="2020-07-12T17:58:47 IST">
+  <suite name="Default suite" duration-ms="3209" started-at="2020-07-13T13:40:19 IST" finished-at="2020-07-13T13:40:22 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="4058" started-at="2020-07-12T17:58:43 IST" finished-at="2020-07-12T17:58:47 IST">
-      <class name="withBDD.GetResponse">
-        <test-method status="PASS" signature="validateGet()[pri:0, instance:withBDD.GetResponse@1e6d1014]" name="validateGet" duration-ms="4024" started-at="2020-07-12T17:58:43 IST" finished-at="2020-07-12T17:58:47 IST">
+    <test name="Default test" duration-ms="3209" started-at="2020-07-13T13:40:19 IST" finished-at="2020-07-13T13:40:22 IST">
+      <class name="withoutBDD.RequestSpec$WithRequestSpecification">
+        <test-method status="PASS" signature="setupRequestSpecification()[pri:0, instance:withoutBDD.RequestSpec$WithRequestSpecification@71bbf57e]" name="setupRequestSpecification" is-config="true" duration-ms="450" started-at="2020-07-13T13:40:19 IST" finished-at="2020-07-13T13:40:19 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateGet -->
-      </class> <!-- withBDD.GetResponse -->
+        </test-method> <!-- setupRequestSpecification -->
+        <test-method status="PASS" signature="getBookingDetailsWithInvalidFirstName()[pri:0, instance:withoutBDD.RequestSpec$WithRequestSpecification@71bbf57e]" name="getBookingDetailsWithInvalidFirstName" duration-ms="2727" started-at="2020-07-13T13:40:19 IST" finished-at="2020-07-13T13:40:22 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getBookingDetailsWithInvalidFirstName -->
+      </class> <!-- withoutBDD.RequestSpec$WithRequestSpecification -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
