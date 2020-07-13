@@ -1,3 +1,9 @@
+/*
+Author: Aman Ur Rahman
+Program: LongestRepeatingSubstring
+Description:
+Print the length of the longest substring with non-repeating characters
+*/
 package hackerRank;
 
 public class LongestRepeatingSubstring {
