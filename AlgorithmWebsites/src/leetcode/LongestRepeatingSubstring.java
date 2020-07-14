@@ -4,7 +4,7 @@ Program: LongestRepeatingSubstring
 Description:
 Print the length of the longest substring with non-repeating characters
 */
-package hackerRank;
+package leetcode;
 
 public class LongestRepeatingSubstring {
 
