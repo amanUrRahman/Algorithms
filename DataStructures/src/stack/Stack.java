@@ -4,21 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Stack {
-	protected int top;
-	// protected List<Integer> stack = new ArrayList<Integer>();
-	@SuppressWarnings("rawtypes")
-	protected List stack = new ArrayList();
+	public int top;
+	public List<String> stack;
 
 	Stack() {
 		top = -1;
+		stack = new ArrayList<String>();
 	}
 
 	// Method to insert an element into the stack
-	@SuppressWarnings("unchecked")
-	public void push(Object toBePushed) {
+	public void push(String toBePushed) {
 		stack.add(toBePushed);
-		top = stack.size();
-		System.out.println("The element " + toBePushed + " has been inserted at position " + (top - 1));
+		top++;
+		System.out.println("The element " + toBePushed + " has been inserted at position " + (top));
 	}
 
 	// Method to remove the latest element from the stack
@@ -26,11 +24,10 @@ public class Stack {
 		if (isEmpty()) {
 			System.out.println("The Stack is empty");
 		} else {
-			top = stack.size();
-			Object removedElement = stack.get(top - 1);
-			stack.remove(top - 1);
+ 			String removedElement = stack.get(top);
+			stack.remove(top);
 			System.out.println("The element " + removedElement + " has been removed from position " + (top));
-			top = stack.size();
+			top--;
 		}
 	}
 
@@ -70,18 +67,12 @@ public class Stack {
 		}
 	}
 
-	public static void main(String[] args) {
-
-		Stack a = new Stack();
-		a.push(2);
-		a.push("Aman");
-		a.push(true);
-		a.push(23.23);
-		a.display();
-		a.pop();
-		a.display();
-		
-		
-
+	public String elementAtTop() {
+		if (this.isEmpty()) {
+			System.out.println("The Stack is empty");
+			return "-1";
+		}
+		return stack.get(top);
 	}
+
 }
