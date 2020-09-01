@@ -12,7 +12,7 @@ public class SubArrayWithGivenSum {
 				i++;
 				continue;
 			} else if (sum(array, i, j) == sum) {
-				System.out.println("The subarray is between " + (i + 1) + " and " + (j + 1));
+				System.out.println("The subarray is between indexes " + (i + 1) + " and " + (j + 1));
 				return;
 			}
 		}
@@ -28,7 +28,7 @@ public class SubArrayWithGivenSum {
 	}
 
 	public static void main(String[] args) {
-		subArray(new int[] { 2, 3, 6, 9, 5, 3 }, 13);
+		subArray(new int[] { 2, 3, 6, 2, 9, 5, 3 }, 13);
 
 	}
 
