@@ -43,7 +43,7 @@ public class BalancedParanthesis {
 	}
 
 	public static void main(String[] args) {
-		if(BalanceCheck("&{((([[[]]][])&))}"))
+		if(BalanceCheck("{((([[[}]]][])))}"))
 			System.out.println("String is balanced");
 		else
 			System.out.println("String is not balanced");
